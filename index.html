@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSI Student Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎓 HSI Student Management</h1>
+
+        <!-- Area Pesan Alert Notification -->
+        <div id="alertMessage" class="alert hidden"></div>
+
+        <!-- Form Tambah / Edit Siswa -->
+        <div class="card">
+            <h2 id="formTitle">➕ Tambah Siswa</h2>
+            <form id="studentForm">
+                <!-- Input tersembunyi untuk menyimpan ID saat mode edit -->
+                <input type="hidden" id="studentId">
+
+                <div class="form-group">
+                    <label for="name">Nama Siswa:</label>
+                    <input type="text" id="name" placeholder="Masukkan nama siswa" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="score">Nilai:</label>
+                    <input type="number" id="score" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="submitBtn">➕ Tambah Siswa</button>
+                    <button type="button" id="cancelBtn" class="btn-cancel hidden">❌ Batal Edit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Ringkasan Statistik -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Siswa</h3>
+                <p id="totalStudents">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Rata-rata Nilai</h3>
+                <p id="averageScore">0</p>
+            </div>
+        </div>
+
+        <!-- Daftar Siswa -->
+        <div class="card">
+            <h2>📋 Daftar Siswa</h2>
+            <div id="studentList" class="student-list">
+                <!-- Data siswa akan dirender di sini oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Panggil script.js wajib di akhir body -->
+    <script src="script.js"></script>
+</body>
+</html>
